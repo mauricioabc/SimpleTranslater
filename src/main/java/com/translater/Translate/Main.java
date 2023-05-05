@@ -1,8 +1,6 @@
 package com.translater.Translate;
 
-import com.google.cloud.translate.TranslateException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,7 +14,6 @@ public class Main {
         String targetName = "pt_BR";
         String sourceLanguage = "en"; // Idioma de origem (inglês)
         String targetLanguage = "pt"; // Idioma de destino (português)
-        String text = "Hello, world!"; // Texto a ser traduzido
 
         Parser parse = new Parser();
         
@@ -33,12 +30,12 @@ public class Main {
         //Faz as traduções e atualiza lista de atributos
         try {
             GoogleTranslate translator = new GoogleTranslate(apiKey);
-            String translatedText;
+            String text, translatedText;
             Properties atributo;
             for (int i = 0; i < atributos.size(); i++) {
                 atributo = (Properties) atributos.get(i);
                 text = atributo.getValue();
-                translatedText = "teste"; //translator.translateText(text, sourceLanguage, targetLanguage);
+                translatedText = translator.translateText(text, sourceLanguage, targetLanguage);
                 atributo.setValue(translatedText);
                 atributos.set(i, atributo);
             }
