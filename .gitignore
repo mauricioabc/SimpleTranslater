@@ -1,9 +1,9 @@
 ### Java ###
 
 # Dados API
-*.json
+config/
 
 ### Cache ###
 target/
 nbproject/
-
+nbactions.xml

@@ -10,8 +10,37 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
-        <exec.mainClass>com.translater.Translate.Main</exec.mainClass>
+        <exec.mainClass>com.translater.View.Janela</exec.mainClass>
     </properties>
+    
+    <build>
+	<plugins>
+             <plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-assembly-plugin</artifactId>
+                 <version>3.5.0</version>
+                 <configuration>
+                     <descriptorRefs>
+                         <descriptorRef>jar-with-dependencies</descriptorRef>
+                     </descriptorRefs>
+                     <archive>
+                         <manifest>
+                             <mainClass>com.translater.View.Janela</mainClass>
+                         </manifest>
+                     </archive>
+                 </configuration>
+                 <executions>
+                     <execution>
+                         <id>assemble-all</id>
+                         <phase>package</phase>
+                         <goals>
+                             <goal>single</goal>
+                         </goals>
+                     </execution>
+                 </executions>
+             </plugin>
+	</plugins>
+    </build>
     
     <dependencies>
         <dependency>

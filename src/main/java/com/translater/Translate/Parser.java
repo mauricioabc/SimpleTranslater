@@ -66,13 +66,27 @@ public class Parser {
         }
     }
     
-    public void verificaPastas(){
+    public void verificaPastas() {
         String[] folders = {"output", "input", "config"};
         for (String folder : folders) {
             File directory = new File("./" + folder);
             if (!directory.exists()) {
                 directory.mkdirs();
                 System.out.println("Created directory: " + directory.getAbsolutePath());
+            }
+            if (folder.equals("config")) {
+                File configFile = new File("./config/apiConfig.json");
+                if (!configFile.exists()) {
+                    try {
+                        configFile.createNewFile();
+                        FileWriter writer = new FileWriter(configFile);
+                        writer.write("{\n    \"ApiKey\": \"sua_chave\"\n}");
+                        writer.close();
+                        System.out.println("Created file: " + configFile.getAbsolutePath());
+                    } catch (IOException e) {
+                        System.out.println("Error creating config file: " + e.getMessage());
+                    }
+                }
             }
         }
     }
