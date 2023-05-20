@@ -10,8 +10,8 @@ A API do Google Translate é uma ferramenta que permite traduzir textos de um id
 
 Para usar a aplicação, siga as instruções abaixo:
 
-1. Clone o repositório para sua máquina local ou baixe uma release.
-2. Crie um arquivo `.json` com as credenciais da API do Google Translate. 
+1. Clone o repositório para sua máquina local ou baixe uma release (Compilado com o JDK 19).
+2. Crie um arquivo `.json` com as credenciais da API do Google Translate, este deve ficar pasta `config`. 
 Veja a documentação do Google para mais informações sobre como obter as credenciais.
 3. Execute o programa.
 
